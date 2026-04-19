@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(hash_table_file_writer_and_reader)
+project(working-with-files-with-strings)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -12,15 +12,15 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 file(GLOB SOURCE_FILES "src/*.c")
 
 # Создаём разделяемую (динамическую) библиотеку
-add_library(hash_table_file_writer_and_readerSHARED ${SOURCE_FILES})
-target_include_directories(hash_table_file_writer_and_reader PRIVATE include)
+add_library(working-with-files-with-strings SHARED ${SOURCE_FILES})
+target_include_directories(working-with-files-with-strings PRIVATE include)
 
 include(GNUInstallDirs)
 
 # Устанавливаем библиотеку и заголовки
-install(TARGETS hash_table_file_writer_and_reader
+install(TARGETS working-with-files-with-strings
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
-install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/hash_table_file_writer_and_reader)
+install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/working-with-files-with-strings)
